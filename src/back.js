@@ -1,6 +1,5 @@
-// import fetch from 'fetch';
-
 export async function read(url) {
+    // eslint-disable-next-line no-undef
     const response = await fetch( url, {
         method: 'GET',
         mode: 'cors',
@@ -16,6 +15,7 @@ export async function read(url) {
 }
 
 export async function write(url, data) {
+    // eslint-disable-next-line no-undef
     const response = await fetch( url, {
         method: 'POST',
         mode: 'cors',
@@ -32,6 +32,7 @@ export async function write(url, data) {
 }
 
 export async function del(url) {
+    // eslint-disable-next-line no-undef
     const response = await fetch( url, {
         method: 'DELETE',
         mode: 'cors',

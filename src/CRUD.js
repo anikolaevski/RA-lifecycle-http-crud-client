@@ -7,16 +7,12 @@ import submit_icon from './icons/right-arrow.png';
 import refresh_icon from './icons/10044980_refresh-business-continuity-icon-png-hd-png-download.png';
 import {read, write, del} from './back.js';
 
-const {
-  REACT_APP_URL, 
-  REACT_APP_GET,
-  REACT_APP_ADD,
-  REACT_APP_DELETE
-} = process.env;
+// eslint-disable-next-line no-undef
+const { REACT_APP_URL, REACT_APP_GET, REACT_APP_ADD, REACT_APP_DELETE} = process.env;
 const content = [
-  {id: 1, content: "Lorem Ipsum"},
-  {id: 2, content: "Мой дядя самых честных правил"},
-  {id: 3, content: "Однажды в студеную зимнюю пору"},
+  // {id: 1, content: "Lorem Ipsum"},
+  // {id: 2, content: "Мой дядя самых честных правил"},
+  // {id: 3, content: "Однажды в студеную зимнюю пору"},
 ];
 // eslint-disable-next-line no-undef
 console.log(content, process.env);
@@ -84,7 +80,7 @@ class ContentTile extends React.Component {
   state = { prev: [], current: [] }
   async click() {
     const id = this.props.id;
-    console.log(id);
+    // console.log(id);
     const ret = await del(REACT_APP_URL + REACT_APP_DELETE.replace(':id',id), {});
     if (ret) {
       this.props.callback();
@@ -109,13 +105,14 @@ class AddForm extends React.Component {
     callback: PropTypes.func.isRequired
   }
   async click() {
+    // eslint-disable-next-line no-undef
     const new_text_textarea = document.querySelector("#new_text_textarea");
     if (!new_text_textarea) { return; }
     // console.log(new_text_textarea.value, REACT_APP_URL);
     const writeObj = {content: new_text_textarea.value};
-    const ret = await write(REACT_APP_URL + REACT_APP_ADD, writeObj);
+    await write(REACT_APP_URL + REACT_APP_ADD, writeObj);
     this.props.callback();
-    console.log(ret, content);
+    // console.log(ret, content);
   }
   render() {
     return (
