@@ -2,7 +2,7 @@
   "name": "events_state_layouts",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/anikolaevski/RA-lifecycle-http-crud-client",
+  "homepage": "https://github.com/anikolaevski/RA-lifecycle-http-crud-client/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
