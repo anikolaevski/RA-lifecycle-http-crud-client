@@ -77,7 +77,7 @@ class ContentTile extends React.Component {
     content: PropTypes.string.isRequired,
     callback: PropTypes.func.isRequired
   }
-  state = { prev: [], current: [] }
+  // state = { prev: [], current: [] }
   async click() {
     const id = this.props.id;
     // console.log(id);
@@ -104,15 +104,18 @@ class AddForm extends React.Component {
   static propTypes = {
     callback: PropTypes.func.isRequired
   }
+  state = { prev: '', current: '' }
   async click() {
-    // eslint-disable-next-line no-undef
-    const new_text_textarea = document.querySelector("#new_text_textarea");
-    if (!new_text_textarea) { return; }
-    // console.log(new_text_textarea.value, REACT_APP_URL);
-    const writeObj = {content: new_text_textarea.value};
+    const writeObj = {content: this.state.current};
     await write(REACT_APP_URL + REACT_APP_ADD, writeObj);
     this.props.callback();
-    // console.log(ret, content);
+  }
+  componentDidMount() {
+    // eslint-disable-next-line no-undef
+    document.querySelector("#new_text_textarea").addEventListener('input', (evt) => {
+      evt.preventDefault();
+      this.setState((prev) => ({prev, current: evt.target.value}));
+    })
   }
   render() {
     return (
