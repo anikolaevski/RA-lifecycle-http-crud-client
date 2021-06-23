@@ -69,10 +69,8 @@ class ContentTile extends React.Component {
     content: PropTypes.string.isRequired,
     callback: PropTypes.func.isRequired
   }
-  // state = { prev: [], current: [] }
   async click() {
     const id = this.props.id;
-    // console.log(id);
     const ret = await del(REACT_APP_URL + REACT_APP_DELETE.replace(':id',id), {});
     if (ret) {
       this.props.callback();
@@ -102,18 +100,15 @@ class AddForm extends React.Component {
     await write(REACT_APP_URL + REACT_APP_ADD, writeObj);
     this.props.callback();
   }
-  componentDidMount() {
-    // eslint-disable-next-line no-undef
-    document.querySelector("#new_text_textarea").addEventListener('input', (evt) => {
-      evt.preventDefault();
-      this.setState((prev) => ({prev, current: evt.target.value}));
-    })
+  onTextChange(evt) {
+    evt.preventDefault();
+    this.setState((prev) => ({prev, current: evt.target.value}));
   }
   render() {
     return (
       <form className="crud-footer-zone">
           <label htmlFor="new_note" className="crud-textarea-label">New Note</label>
-          <textarea id="new_text_textarea" name="new_note" className="crud-textarea"></textarea>
+          <textarea id="new_text_textarea" name="new_note" className="crud-textarea" onChange={this.onTextChange.bind(this)}></textarea>
           <img className="crud-add-button" src={submit_icon} onClick={this.click.bind(this)}/>
       </form>
     );
