@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/anikolaevski/RA-lifecycle-http-crud-client/static/css/main.2bb8de24.chunk.css",
+    "main.js": "/anikolaevski/RA-lifecycle-http-crud-client/static/js/main.8996a3ef.chunk.js",
+    "main.js.map": "/anikolaevski/RA-lifecycle-http-crud-client/static/js/main.8996a3ef.chunk.js.map",
+    "runtime-main.js": "/anikolaevski/RA-lifecycle-http-crud-client/static/js/runtime-main.b2bebd8f.js",
+    "runtime-main.js.map": "/anikolaevski/RA-lifecycle-http-crud-client/static/js/runtime-main.b2bebd8f.js.map",
+    "static/js/2.2f0344ad.chunk.js": "/anikolaevski/RA-lifecycle-http-crud-client/static/js/2.2f0344ad.chunk.js",
+    "static/js/2.2f0344ad.chunk.js.map": "/anikolaevski/RA-lifecycle-http-crud-client/static/js/2.2f0344ad.chunk.js.map",
+    "index.html": "/anikolaevski/RA-lifecycle-http-crud-client/index.html",
+    "static/css/main.2bb8de24.chunk.css.map": "/anikolaevski/RA-lifecycle-http-crud-client/static/css/main.2bb8de24.chunk.css.map",
+    "static/js/2.2f0344ad.chunk.js.LICENSE.txt": "/anikolaevski/RA-lifecycle-http-crud-client/static/js/2.2f0344ad.chunk.js.LICENSE.txt",
+    "static/media/10044980_refresh-business-continuity-icon-png-hd-png-download.521ee84f.png": "/anikolaevski/RA-lifecycle-http-crud-client/static/media/10044980_refresh-business-continuity-icon-png-hd-png-download.521ee84f.png",
+    "static/media/cross_in_circle.1c748187.png": "/anikolaevski/RA-lifecycle-http-crud-client/static/media/cross_in_circle.1c748187.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b2bebd8f.js",
+    "static/js/2.2f0344ad.chunk.js",
+    "static/css/main.2bb8de24.chunk.css",
+    "static/js/main.8996a3ef.chunk.js"
+  ]
+}
