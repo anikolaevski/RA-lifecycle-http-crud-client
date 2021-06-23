@@ -7,28 +7,22 @@ import {read, write, del} from './back.js';
 
 // eslint-disable-next-line no-undef
 const { REACT_APP_URL, REACT_APP_GET, REACT_APP_ADD, REACT_APP_DELETE} = process.env;
-const content = [
-  // {id: 1, content: "Lorem Ipsum"},
-  // {id: 2, content: "Мой дядя самых честных правил"},
-  // {id: 3, content: "Однажды в студеную зимнюю пору"},
-];
-// eslint-disable-next-line no-undef
-console.log(content, process.env);
 
 export class CRUD extends React.Component {
   constructor(props) {
     super(props);
+    this.content = [];
   }
-  state = { prev: content, current: content }
+  state = { prev: [], current: [] }
   
   render() {
     const callback = async function () {
       const ret = await read(REACT_APP_URL + REACT_APP_GET);
       if (ret) {
-        content.splice(0, content.length);
-        ret.forEach(o => { content.push(o); });
+        this.content.splice(0, this.content.length);
+        ret.forEach(o => { this.content.push(o); });
       }
-      this.setState((prev) => ({prev, content}) );
+      this.setState((prev) => ({prev, current: this.content}) );
     };
     return (
       <div className="">
