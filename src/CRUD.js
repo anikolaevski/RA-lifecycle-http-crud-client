@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Container from './components/Container';
-// import shortid from 'shortid';
 import del_icon from './icons/cross_in_circle.png';
 import submit_icon from './icons/right-arrow.png';
 import refresh_icon from './icons/10044980_refresh-business-continuity-icon-png-hd-png-download.png';
@@ -33,22 +31,22 @@ export class CRUD extends React.Component {
       this.setState((prev) => ({prev, content}) );
     };
     return (
-      <Container class="">
+      <div className="">
         <h1>CRUD</h1>
-        <Container class="crud-header-zone">
+        <div className="crud-header-zone">
           <h2>Notes</h2>
           <RefreshButton callback={callback.bind(this)}/>
-        </Container>
-        <Container class="crud-content-zone">
+        </div>
+        <div className="crud-content-zone">
           {this.state.current.map(o => <ContentTile 
             key={o.id} 
             id={o.id} 
             content={o.content}
             callback={callback.bind(this)}
           />)}            
-        </Container>
+        </div>
         <AddForm callback={callback.bind(this)}/>
-      </Container>
+      </div>
     );
   }
 }
@@ -88,11 +86,11 @@ class ContentTile extends React.Component {
   }
   render() {
     return (
-      <Container class="crud-content-tile">
+      <div className="crud-content-tile">
           {this.props.content}
           <img className="crud-del-sign" src={del_icon}
             onClick={this.click.bind(this)}/>
-      </Container>
+      </div>
     );
   }
 }
